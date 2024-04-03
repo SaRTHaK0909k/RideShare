@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# RideShare
+
+Welcome to RideShare, a ride-sharing app that connects you with fellow travelers for seamless and enjoyable journeys.
+
+## Features
+
+- **Save Money:** Share rides and split costs to save money on travel expenses.
+- **Meet New People:** Connect with new people and make meaningful connections during your trips.
+- **Rate Your Experience:** Rate your driving buddies and share feedback to improve future rides.
+- **Connect with Ride Buddies:** Stay connected with ride buddies after the trip and chat with them for future journeys.
+- **Review and Rating:** Provide reviews and ratings for your drivers and driving buddies to maintain a trustworthy community.
 
 ## Getting Started
 
-First, run the development server:
+To get started with RideShare, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone this repository to your local machine.
+2. Install the necessary dependencies using `npm install`.
+3. Start the development server with `npm run dev`.
+4. Access the app at `http://localhost:3000`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Next.js: Frontend framework for building React applications.
+- Supabase: Backend service for authentication and data storage.
+- Tailwind CSS: Utility-first CSS framework for styling the app.
+- React: JavaScript library for building user interfaces.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Contributing
 
-## Learn More
+We welcome contributions to improve RideShare! If you have any suggestions or find any issues, please open an issue or submit a pull request.
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the [MIT License](LICENSE).
