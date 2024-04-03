@@ -80,41 +80,40 @@ const Hero = () => {
                 </div>
             </section>
         
-      </div>
-
+      </div>  
+        <div><h1 className="mb-2 mt-3 text-center pt-2  text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Key Features</h1></div>
       <div id='cards' className="grid grid-cols-3 gap-4 p-10">
 
-      <div className="card card-side bg-base-100 shadow-xl">
-  <figure><img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie"/></figure>
+
+
+      <div className="card w-96 bg-base-100 shadow-xl">
   <div className="card-body">
-    <h2 className="card-title">New movie is released!</h2>
-    <p>Click the button to watch on Jetflix app.</p>
-    <div className="card-actions justify-end">
-      <button className="btn btn-primary">Watch</button>
-    </div>
+    <h2 className="card-title justify-center ">How is it Done</h2>
+    <p>To book a ride on RideShare, simply enter your pickup address, drop address, and desired departure time. Our system will find a partner whose route aligns with yours and notify you once a match is found. Confirm the ride, and you're all set for a convenient and cost-effective journey!</p>
+    
   </div>
 </div>
         
 
-<div className="card card-side bg-base-100 shadow-xl">
-  <figure><img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie"/></figure>
+<div className="card w-96 bg-base-100 shadow-xl">
   <div className="card-body">
-    <h2 className="card-title">New movie is released!</h2>
-    <p>Click the button to watch on Jetflix app.</p>
-    <div className="card-actions justify-end">
-      <button className="btn btn-primary">Watch</button>
-    </div>
+    <h2 className="card-title justify-center">Rate your Ride Buddies!</h2>
+    <p>You can rate and write a review for the person you shared the cab with, which will help other people make informed decisions and create a more transparent and trustworthy community within the ride-sharing platform.
+
+
+
+
+
+</p>
   </div>
 </div>
 
-<div className="card card-side bg-base-100 shadow-xl">
-  <figure><img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie"/></figure>
+
+<div className="card w-96 bg-base-100 shadow-xl">
   <div className="card-body">
-    <h2 className="card-title">New movie is released!</h2>
-    <p>Click the button to watch on Jetflix app.</p>
-    <div className="card-actions justify-end">
-      <button className="btn btn-primary">Watch</button>
-    </div>
+    <h2 className="card-title justify-center">Why to use?</h2>
+    <p>seamless booking, real-time tracking, and reliable drivers, enjoy control, customization, and convenience. Join us for safe travels and unforgettable moments!</p>
+    
   </div>
 </div>
 

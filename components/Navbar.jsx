@@ -24,7 +24,7 @@ const Navbar = () => {
     fetchUser();
   }, []);
   
-
+  
 
 
    
