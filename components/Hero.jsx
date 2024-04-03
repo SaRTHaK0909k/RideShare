@@ -1,6 +1,18 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Hero = () => {
+
+  const notify = () => toast.info(
+    <p>
+      To book a ride on RideShare, simply enter your pickup address, drop address, and desired departure time.
+      Our system will find a partner whose route aligns with yours and notify you once a match is found.
+      Confirm the ride, and you're all set for a convenient and cost-effective journey!
+    </p>
+  );
+
+
   const router=useRouter();
   const scrollToCards = () => {
     const cardsSection = document.getElementById('cards');
@@ -16,10 +28,10 @@ const Hero = () => {
 
       <section className="bg-white dark:bg-gray-900">
                 <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-                    <a href="#" className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">
-                        <span className="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3">New</span> <span className="text-sm font-medium">APP is out! See what's new</span>
+                    <button className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">
+                        <span onClick={notify} className="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3">##</span> <span onClick={notify} className="text-sm font-medium">Start with Us</span> <ToastContainer />
                         <svg className="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" /></svg>
-                    </a>
+                    </button>
                     <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Share the Road, Share the Joy!</h1>
                     <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Discover RideShare: Save money by sharing rides and meet new people. Rate your experiences and connect with ride buddies for enjoyable journeys. Join our community for safe travels and memorable adventures on the road.</p>
                     <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
