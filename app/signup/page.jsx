@@ -1,29 +1,32 @@
+// SignupForm.jsx
 'use client'
 import React, { useState } from 'react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
-import { useRouter } from 'next/navigation'; // Import useNavigation from next/navigation
+import  router  from 'next/router';
 
-const LoginForm = () => {
+const SignupForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const supabase = createClientComponentClient();
-  const navigation = useRouter(); // Use useNavigation instead of useRouter
 
-  const handleLogin = async () => {
+  const handleSignUp = async () => {
     try {
-      const res = await supabase.auth.signInWithPassword({
+      const res = await supabase.auth.signUp({
         email,
         password,
+        options: {
+          emailRedirectTo: `${location.origin}/auth/callback`,
+        },
       });
-      console.log('Login success:', res);
-      navigation.push('./'); // Use navigation.push for navigation
-    } catch (error) {
-      console.error('Error logging in:', error.message);
-    }
-  };
+      // Handle signup success
+      console.log('Signup success:', res);
 
-  const handleSignUp = () => {
-    navigation.push('../signup'); // Redirect to the signup page using navigation.push
+      // Redirect to another page
+      router.push('/project/app/page.js');
+    } catch (error) {
+      console.error('Error signing up:', error.message);
+      // Handle signup error, display message, etc.
+    }
   };
 
   return (
@@ -46,14 +49,8 @@ const LoginForm = () => {
           className="mb-4 w-full p-3 rounded-md border border-gray-700 bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500"
         />
         <button
-          onClick={handleLogin}
-          className="w-full p-3 rounded-md bg-gray-700 text-white hover:bg-gray-600 focus:outline-none"
-        >
-          Sign In
-        </button>
-        <button
           onClick={handleSignUp}
-          className="w-full mt-2 p-3 rounded-md bg-blue-600 text-white hover:bg-blue-700 focus:outline-none"
+          className="w-full mb-2 p-3 rounded-md bg-blue-600 text-white hover:bg-blue-700 focus:outline-none"
         >
           Sign Up
         </button>
@@ -62,4 +59,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default SignupForm;
