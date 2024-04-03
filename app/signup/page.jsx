@@ -2,13 +2,13 @@
 'use client'
 import React, { useState } from 'react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
-import  router  from 'next/router';
+import { useRouter } from 'next/navigation';
 
 const SignupForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const supabase = createClientComponentClient();
-
+  const router=useRouter();
   const handleSignUp = async () => {
     try {
       const res = await supabase.auth.signUp({
@@ -20,9 +20,8 @@ const SignupForm = () => {
       });
       // Handle signup success
       console.log('Signup success:', res);
-
       // Redirect to another page
-      router.push('/project/app/page.js');
+      router.push('../login/page.jsx');
     } catch (error) {
       console.error('Error signing up:', error.message);
       // Handle signup error, display message, etc.

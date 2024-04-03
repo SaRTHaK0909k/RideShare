@@ -1,29 +1,35 @@
 'use client'
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
-import { useRouter } from 'next/navigation'; // Import useNavigation from next/navigation
+import { useRouter } from 'next/navigation';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const supabase = createClientComponentClient();
-  const navigation = useRouter(); // Use useNavigation instead of useRouter
+  const router = useRouter();
 
   const handleLogin = async () => {
     try {
-      const res = await supabase.auth.signInWithPassword({
+      const { user, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
-      console.log('Login success:', res);
-      navigation.push('./'); // Use navigation.push for navigation
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      console.log('Login success:', user);
+      router.push('../page'); // Redirect to home page after login
     } catch (error) {
       console.error('Error logging in:', error.message);
+      // Handle error and provide feedback to the user
     }
   };
 
   const handleSignUp = () => {
-    navigation.push('../signup'); // Redirect to the signup page using navigation.push
+    router.push('/signup'); // Redirect to the signup page
   };
 
   return (
