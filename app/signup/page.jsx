@@ -21,7 +21,7 @@ const SignupForm = () => {
       // Handle signup success
       console.log('Signup success:', res);
       // Redirect to another page
-      router.push('../login/page.jsx');
+      router.push('/project/app/login');
     } catch (error) {
       console.error('Error signing up:', error.message);
       // Handle signup error, display message, etc.

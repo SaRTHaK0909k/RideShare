@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import router from 'next/router';
 import Navbar from '../components/Navbar.jsx'
 import supabase from '../config/supabaseClient'
+import Hero from '../components/Hero.jsx'
+import Footer from '../components/Footer.jsx'
 const Page = () => {
   const [user, setUser] = useState(null);
   const supabase = createClientComponentClient();
@@ -28,6 +30,8 @@ const Page = () => {
     {user ? (
       <>
         <Navbar/>
+        <Hero/>
+        <Footer/>
       </>
     ) : (
       <div onClick={() => router.push('./signup/page.jsx')} style={{ cursor: 'pointer' }}>Go to Signup</div>

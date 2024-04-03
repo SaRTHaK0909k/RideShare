@@ -21,7 +21,7 @@ const LoginForm = () => {
       }
 
       console.log('Login success:', user);
-      router.push('../page'); // Redirect to home page after login
+      router.push('./'); // Redirect to home page after login
     } catch (error) {
       console.error('Error logging in:', error.message);
       // Handle error and provide feedback to the user
