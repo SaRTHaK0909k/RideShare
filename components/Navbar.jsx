@@ -3,7 +3,7 @@ import React, { useEffect,useState } from 'react';
 import Link from 'next/link';
 import {useRouter} from 'next/navigation'; // Import the useRouter hook
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
-import { Habibi } from 'next/font/google';
+
 const Navbar = () => {
   const [user, setUser] = useState(null); // State to hold the user information
   const supabase = createClientComponentClient();
@@ -53,7 +53,7 @@ const Navbar = () => {
               <li>
                 <Link href='/shareride'>Share a Ride</Link>
               </li>
-              <li><a>Transit Buddies</a></li>
+              <li><Link href='/transitBuddies'>Transit Buddies</Link></li>
             </ul>
           </div>
           <div className="navbar-end">

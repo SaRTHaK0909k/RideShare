@@ -45,7 +45,7 @@ const RideForm = () => {
       }
 
       console.log("Data inserted successfully:", data);
-      toast.success("Form submitted successfully!", {
+      toast.success("Form submitted successfully! Please Wait While we find a travel buddy for you", {
         position: "top-right",
         autoClose: 3000, // Close the toast after 3 seconds
         hideProgressBar: false,
@@ -54,7 +54,10 @@ const RideForm = () => {
         draggable: true,
         progress: undefined,
       });
-      router.push('/')
+      setTimeout(() => {
+        router.push('/');
+      }, 3000);
+      
     } catch (error) {
       console.error("Error inserting data:", error.message);
     }
