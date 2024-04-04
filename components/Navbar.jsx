@@ -31,7 +31,7 @@ const Navbar = () => {
  
 
     return (
-      <div>
+      <div className='sticky top-0 z-50'>
       {user ? (
         <div className="navbar bg-base-100">
           <div className="navbar-start">
@@ -45,13 +45,13 @@ const Navbar = () => {
                 <li><a>Item 3</a></li>
               </ul>
             </div>
-            <a className="btn btn-ghost text-xl">RideShare</a>
+            <Link href="/"className="btn btn-ghost text-xl">RideShare</Link>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
-              <li><a>Home</a></li>
+              <li><Link href='/'>Home</Link></li>
               <li>
-                <a>Share a Ride</a>
+                <Link href='/shareride'>Share a Ride</Link>
               </li>
               <li><a>Transit Buddies</a></li>
             </ul>
