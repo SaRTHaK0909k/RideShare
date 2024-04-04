@@ -4,7 +4,12 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { ToastContainer, toast } from "react-toastify"; // Import toast from react-toastify
 import "react-toastify/dist/ReactToastify.css";
-import supabase from '../../config/supabaseClient'; // Import Supabase client from your config file
+
+import { createClient } from '@supabase/supabase-js'
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+const supabase = createClient(supabaseUrl, supabaseKey)// Import Supabase client from your config file
 
 const RideForm = () => {
   const [name, setName] = useState("");
@@ -15,25 +20,29 @@ const RideForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
       // Insert data into the Supabase table
-      const { data, error } = await supabase.from('rides').insert([
+      const { data, error } = await supabase
+      .from("rides")
+      .insert([
         {
-          Name: name,
-          Gender: gender,
+          name: name,
+          gender: gender,
           pickup_location: pickupLocation,
           drop_location: dropLocation,
-          pickup_Time: departureTime,
+          pickuptime: departureTime,
         },
-      ]).select();
-  
+      ])
+      .select();
+    
+
       if (error) {
-        console.error('Error inserting data:', error.message);
+        console.error("Error inserting data:", error.message);
         return;
       }
-  
-      console.log('Data inserted successfully:', data);
+
+      console.log("Data inserted successfully:", data);
       toast.success("Form submitted successfully!", {
         position: "top-right",
         autoClose: 3000, // Close the toast after 3 seconds
@@ -44,10 +53,10 @@ const RideForm = () => {
         progress: undefined,
       });
     } catch (error) {
-      console.error('Error inserting data:', error.message);
+      console.error("Error inserting data:", error.message);
     }
   };
-  
+
   return (
     <>
       <Navbar />
