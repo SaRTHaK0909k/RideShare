@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { ToastContainer, toast } from "react-toastify"; // Import toast from react-toastify
 import "react-toastify/dist/ReactToastify.css";
-
+import { useRouter } from "next/navigation";
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -17,6 +17,8 @@ const RideForm = () => {
   const [pickupLocation, setPickupLocation] = useState("");
   const [dropLocation, setDropLocation] = useState("");
   const [departureTime, setDepartureTime] = useState("");
+
+  const router=useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -52,6 +54,7 @@ const RideForm = () => {
         draggable: true,
         progress: undefined,
       });
+      router.push('/')
     } catch (error) {
       console.error("Error inserting data:", error.message);
     }
